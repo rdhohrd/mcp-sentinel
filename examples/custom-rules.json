@@ -1,0 +1,66 @@
+{
+  "name": "custom-production-policy",
+  "description": "Custom enterprise policy with path sandboxing, rate limits, and tool filtering.",
+  "pathGuard": {
+    "enabled": true,
+    "allowedRoots": [
+      "./workspace",
+      "./public"
+    ],
+    "blockedPaths": [
+      "./workspace/private",
+      "./workspace/secrets"
+    ],
+    "blockSensitiveFiles": true
+  },
+  "execGuard": {
+    "enabled": true,
+    "allowSudo": false,
+    "allowedCommands": [
+      "git",
+      "npm",
+      "node",
+      "cargo",
+      "ls",
+      "grep"
+    ],
+    "blockedCommands": [
+      "curl",
+      "wget",
+      "nc",
+      "bash"
+    ]
+  },
+  "secretGuard": {
+    "enabled": true,
+    "mode": "redact"
+  },
+  "toolFilter": {
+    "enabled": true,
+    "allowlist": [
+      "read_*",
+      "write_*",
+      "list_*"
+    ],
+    "denylist": [
+      "delete_*",
+      "drop_*"
+    ]
+  },
+  "rateLimiter": {
+    "enabled": true,
+    "maxCallsPerMinute": 45,
+    "toolOverrides": {
+      "write_file": 10
+    }
+  },
+  "circuitBreaker": {
+    "enabled": true,
+    "defaultTimeoutMs": 25000,
+    "failureThreshold": 3
+  },
+  "audit": {
+    "enabled": true,
+    "logPath": "sentinel-audit.jsonl"
+  }
+}

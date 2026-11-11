@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "filesystem-secured": {
+      "command": "mcp-sentinel",
+      "args": [
+        "run",
+        "--preset", "strict",
+        "--root", "/Users/username/workspace",
+        "--",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/username/workspace"
+      ]
+    },
+    "github-secured": {
+      "command": "mcp-sentinel",
+      "args": [
+        "run",
+        "--preset", "standard",
+        "--rate-limit", "30",
+        "--",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ]
+    }
+  }
+}

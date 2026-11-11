@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "local-terminal": {
+      "command": "mcp-sentinel",
+      "args": [
+        "run",
+        "--preset", "standard",
+        "--timeout", "15000",
+        "--",
+        "node",
+        "./servers/terminal-mcp.js"
+      ]
+    }
+  }
+}

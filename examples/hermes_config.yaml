@@ -1,0 +1,15 @@
+# Hermes Agent configuration wrapping MCP with MCP Sentinel
+mcp_servers:
+  secured_filesystem:
+    command: "mcp-sentinel"
+    args:
+      - "run"
+      - "--preset"
+      - "strict"
+      - "--root"
+      - "/root/workspace"
+      - "--"
+      - "npx"
+      - "-y"
+      - "@modelcontextprotocol/server-filesystem"
+      - "/root/workspace"
