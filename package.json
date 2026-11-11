@@ -7,7 +7,7 @@
     "mcp-sentinel": "bin/mcp-sentinel.js"
   },
   "scripts": {
-    "test": "node --test test/*.test.js",
+    "test": "node test/run.js",
     "benchmark": "node bin/mcp-sentinel.js benchmark"
   },
   "repository": {
