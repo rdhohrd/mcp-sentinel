@@ -1,0 +1,39 @@
+{
+  "name": "mcp-sentinel",
+  "version": "1.0.0",
+  "description": "Zero-dependency runtime security firewall and sandbox proxy for Model Context Protocol (MCP)",
+  "main": "src/index.js",
+  "bin": {
+    "mcp-sentinel": "bin/mcp-sentinel.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "benchmark": "node bin/mcp-sentinel.js benchmark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdhohrd/mcp-sentinel.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "security",
+    "firewall",
+    "sandbox",
+    "agentic-ai",
+    "llm-security",
+    "claude-desktop",
+    "cursor",
+    "dlp",
+    "zero-dependency"
+  ],
+  "author": "Ridho Herdyansah <rdhohrd@users.noreply.github.com> (https://github.com/rdhohrd)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rdhohrd/mcp-sentinel/issues"
+  },
+  "homepage": "https://github.com/rdhohrd/mcp-sentinel#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
